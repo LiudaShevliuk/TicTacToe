@@ -21,7 +21,7 @@ public class GamePanel extends JPanel implements ActionListener {
     private JTextArea playerCenterText = new JTextArea("VS");
     private JTextArea playerRightText = new JTextArea("Player #2");
     private JTextArea playerText = new JTextArea("Player");
-    private JTextArea mobtText = new JTextArea("Mob");
+    private JTextArea mobtText = new JTextArea("Mod");
 
     private Font fontOfText = new Font("Verdana", Font.BOLD, 30);
 
