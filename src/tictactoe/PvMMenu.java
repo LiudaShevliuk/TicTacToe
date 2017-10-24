@@ -79,7 +79,7 @@ public class PvMMenu extends JPanel {
         c.fill = GridBagConstraints.NONE;
         c.gridx = 1;
         c.gridy = 2;
-        c.insets = new Insets(10, -70, 40, 30);
+        c.insets = new Insets(0, -70, 40, 30);
         c.anchor = GridBagConstraints.WEST;
         add(three, c);
         selectSize.add(three);
@@ -112,7 +112,7 @@ public class PvMMenu extends JPanel {
         c.fill = GridBagConstraints.NONE;
         c.gridx = 2;
         c.gridy = 2;
-        c.insets = new Insets(10, 150, 40, 0);
+        c.insets = new Insets(0, 150, 40, 0);
         c.anchor = GridBagConstraints.WEST;
         add(easy, c);
         selectDifficulty.add(easy);
