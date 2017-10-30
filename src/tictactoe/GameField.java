@@ -8,10 +8,12 @@ import javax.xml.bind.ValidationEvent;
 public class GameField extends JPanel {
 
     private static int fieldSize;
+    private static int whichGame;
     private static XOButton buttons[][];
 
     public GameField(int fieldSize,int whichGame){
         this.fieldSize = fieldSize;
+        this.whichGame = whichGame;
 
         setLayout(new GridLayout(fieldSize, fieldSize));
         setSize(400,400);
@@ -32,6 +34,7 @@ public class GameField extends JPanel {
     public static int getfieldSize() {
         return fieldSize;
     }
+
 
     public static XOButton[][] getButtons() {
         return buttons;

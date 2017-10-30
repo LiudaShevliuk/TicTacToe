@@ -4,6 +4,8 @@ import java.util.Random;
 
 public class PvMGameProcess {
 
+    private static ResultFrame result;
+
     private static CheckWinner checkWinner;
     private static int difficulty;
 
@@ -39,8 +41,24 @@ public class PvMGameProcess {
     public static void isWinner(int X,int Y) {
         XOButton[][] buttons = GameField.getButtons();
         checkWinner.refreshData(buttons);
-        if (checkWinner.CheckWin(1,X,Y) || checkWinner.CheckWin(2,X,Y) || checkWinner.CheckDraw())
+        if (checkWinner.CheckWin(1,X,Y)){
             endGame();
+            if (turn == 0)
+            result = new ResultFrame(3);
+            else
+                result = new ResultFrame(4);
+        }
+        else if (checkWinner.CheckWin(2,X,Y)){
+            endGame();
+            if (turn == 0)
+                result = new ResultFrame(4);
+            else
+                result = new ResultFrame(3);
+        }
+        else if (checkWinner.CheckDraw()){
+            endGame();
+            result = new ResultFrame(5);
+        }
     }
 
     public static void endGame() {

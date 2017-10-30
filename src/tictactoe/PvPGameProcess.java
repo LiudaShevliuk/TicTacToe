@@ -4,6 +4,8 @@ import javax.swing.RepaintManager;
 
 public class PvPGameProcess {
 
+    private static ResultFrame result;
+
     //first - false, second - true
     private static boolean turn = true;
 
@@ -28,8 +30,18 @@ public class PvPGameProcess {
     public static void isWinner(int X,int Y){
         XOButton[][] buttons = GameField.getButtons();
         checkWinner.refreshData(buttons);
-        if(checkWinner.CheckWin(first, X, Y) || checkWinner.CheckWin(second, X, Y) || checkWinner.CheckDraw())
+        if (checkWinner.CheckWin(first,X,Y)){
             endGame();
+            result = new ResultFrame(1);
+        }
+        else if (checkWinner.CheckWin(second,X,Y)){
+            endGame();
+            result = new ResultFrame(2);
+        }
+        else if (checkWinner.CheckDraw()){
+            endGame();
+            result = new ResultFrame(5);
+        }
     }
 
     public static void endGame(){

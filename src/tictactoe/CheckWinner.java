@@ -53,23 +53,19 @@ public class CheckWinner {
 
     public boolean CheckWin(int who, int X, int Y) {                        //get curr value of button
         CountWin = 0;
-        if (checkLine(X, Y, 0, 1, who)) {
-            System.out.println("Player " + who + " win!");               //Find similars in rows(horizontal)
+        if (checkLine(X, Y, 0, 1, who)) {                           //Find similars in rows(horizontal)
             return true;
         }
         CountWin = 0;
-        if (checkLine(X, Y, 1, 0, who)) {
-            System.out.println("Player " + who + " win!");               //Find similars in cols(vertical)
+        if (checkLine(X, Y, 1, 0, who)) {                               //Find similars in cols(vertical)
             return true;
         }
         CountWin = 0;
-        if (checkLine(X, Y, 1, 1, who)) {
-            System.out.println("Player " + who + " win!");               //Find similars in cols(vertical)
+        if (checkLine(X, Y, 1, 1, who)) {                             //Find similars in cols(vertical)
             return true;
         }
         CountWin = 0;
-        if (checkLine(X, Y, -1, 1, who)) {
-            System.out.println("Player " + who + " win!");               //Find similars in cols(vertical)
+        if (checkLine(X, Y, -1, 1, who)) {                      //Find similars in cols(vertical)
             return true;
         }
         return false;
@@ -80,7 +76,6 @@ public class CheckWinner {
             for (int j = 0; j < fieldSize; j++)
                 if (buttons[i][j].getWho() == 0)
                     return false;
-        System.out.println("It's a draw!");
         return true;
     }
 
